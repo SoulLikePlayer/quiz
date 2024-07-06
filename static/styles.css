@@ -41,3 +41,19 @@ h1 {
     font-size: 20px;
     font-weight: bold;
 }
+
+.excellent {
+    color: green;
+}
+
+.good {
+    color: blue;
+}
+
+.average {
+    color: orange;
+}
+
+.poor {
+    color: red;
+}

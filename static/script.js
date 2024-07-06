@@ -25,8 +25,28 @@ document.addEventListener('DOMContentLoaded', () => {
                         score++;
                     }
                 });
+                const finalScore = (score / totalQuestions) * 20;
                 const scoreDiv = document.getElementById('score');
-                scoreDiv.innerHTML = `Votre score: ${(score / totalQuestions) * 20} / 20`;
+
+                let message = '';
+                let cssClass = '';
+
+                if (finalScore >= 16) {
+                    message = 'Excellent travail!';
+                    cssClass = 'excellent';
+                } else if (finalScore >= 12) {
+                    message = 'Bon travail!';
+                    cssClass = 'good';
+                } else if (finalScore >= 8) {
+                    message = 'Peut mieux faire!';
+                    cssClass = 'average';
+                } else {
+                    message = 'Besoin de plus de pratique!';
+                    cssClass = 'poor';
+                }
+
+                scoreDiv.innerHTML = `Votre score: ${finalScore} / 20<br>${message}`;
+                scoreDiv.className = cssClass;
             });
         });
 });
